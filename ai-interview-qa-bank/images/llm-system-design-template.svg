@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 320" font-family="Helvetica, Arial, sans-serif">
+  <title>Generic LLM feature system design template</title>
+  <rect width="740" height="320" fill="#ffffff"/>
+  <text x="370" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#1f2937">Generic LLM feature: system design template</text>
+  <g font-size="13" text-anchor="middle" fill="#1f2937">
+    <rect x="20" y="70" width="130" height="55" rx="8" fill="#f3f4f6" stroke="#6b7280"/>
+    <text x="85" y="95">Request</text>
+    <text x="85" y="112" font-size="11" fill="#374151">input validation, PII scrub</text>
+    <rect x="190" y="70" width="150" height="55" rx="8" fill="#e0e7ff" stroke="#4f46e5"/>
+    <text x="265" y="95">Context builder</text>
+    <text x="265" y="112" font-size="11" fill="#312e81">retrieval, memory, tools</text>
+    <rect x="380" y="70" width="150" height="55" rx="8" fill="#fef3c7" stroke="#b45309"/>
+    <text x="455" y="95">Model call</text>
+    <text x="455" y="112" font-size="11" fill="#78350f">routing, timeout, retry</text>
+    <rect x="570" y="70" width="150" height="55" rx="8" fill="#dcfce7" stroke="#15803d"/>
+    <text x="645" y="95">Output check</text>
+    <text x="645" y="112" font-size="11" fill="#14532d">schema, citations, policy</text>
+    <rect x="190" y="200" width="150" height="50" rx="8" fill="#f3f4f6" stroke="#6b7280"/>
+    <text x="265" y="222">Traces and logs</text>
+    <text x="265" y="239" font-size="11" fill="#374151">cost, latency, quality</text>
+    <rect x="380" y="200" width="150" height="50" rx="8" fill="#f3f4f6" stroke="#6b7280"/>
+    <text x="455" y="222">Eval pipeline</text>
+    <text x="455" y="239" font-size="11" fill="#374151">offline and sampled online</text>
+  </g>
+  <g stroke="#374151" stroke-width="1.5" fill="none" marker-end="url(#a)">
+    <line x1="150" y1="97" x2="190" y2="97"/>
+    <line x1="340" y1="97" x2="380" y2="97"/>
+    <line x1="530" y1="97" x2="570" y2="97"/>
+    <line x1="265" y1="125" x2="265" y2="200" stroke-dasharray="4 3"/>
+    <line x1="455" y1="125" x2="455" y2="200" stroke-dasharray="4 3"/>
+  </g>
+  <text x="370" y="290" text-anchor="middle" font-size="12" fill="#374151">Say which parts are deterministic code and which are LLM calls. Put the cost and latency budget next to each box.</text>
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L6,3 z" fill="#374151"/>
+    </marker>
+  </defs>
+</svg>

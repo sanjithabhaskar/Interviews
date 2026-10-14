@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" font-family="Helvetica, Arial, sans-serif">
+  <title>RAG pipeline: offline indexing and online query</title>
+  <rect width="760" height="300" fill="#ffffff"/>
+  <text x="380" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#1f2937">RAG pipeline</text>
+  <text x="20" y="62" font-size="12" font-weight="bold" fill="#4b5563">OFFLINE: INDEXING</text>
+  <g font-size="13" text-anchor="middle" fill="#1f2937">
+    <rect x="20" y="80" width="150" height="50" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+    <text x="95" y="110">Documents</text>
+    <rect x="200" y="80" width="150" height="50" rx="6" fill="#e0e7ff" stroke="#4f46e5"/>
+    <text x="275" y="103">Chunk</text>
+    <text x="275" y="120" font-size="11" fill="#312e81">size, overlap, structure</text>
+    <rect x="380" y="80" width="150" height="50" rx="6" fill="#e0e7ff" stroke="#4f46e5"/>
+    <text x="455" y="103">Embed</text>
+    <text x="455" y="120" font-size="11" fill="#312e81">embedding model</text>
+    <rect x="560" y="80" width="170" height="50" rx="6" fill="#dcfce7" stroke="#15803d"/>
+    <text x="645" y="103">Vector + keyword index</text>
+    <text x="645" y="120" font-size="11" fill="#14532d">with metadata</text>
+  </g>
+  <text x="20" y="172" font-size="12" font-weight="bold" fill="#4b5563">ONLINE: QUERY</text>
+  <g font-size="13" text-anchor="middle" fill="#1f2937">
+    <rect x="20" y="190" width="130" height="50" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+    <text x="85" y="220">User query</text>
+    <rect x="190" y="190" width="150" height="50" rx="6" fill="#e0e7ff" stroke="#4f46e5"/>
+    <text x="265" y="213">Retrieve top-k</text>
+    <text x="265" y="230" font-size="11" fill="#312e81">dense + sparse (hybrid)</text>
+    <rect x="370" y="190" width="150" height="50" rx="6" fill="#fef3c7" stroke="#b45309"/>
+    <text x="445" y="213">Rerank</text>
+    <text x="445" y="230" font-size="11" fill="#78350f">cross-encoder, top-n</text>
+    <rect x="550" y="190" width="180" height="50" rx="6" fill="#dcfce7" stroke="#15803d"/>
+    <text x="640" y="213">LLM answers from context</text>
+    <text x="640" y="230" font-size="11" fill="#14532d">with cited chunk IDs</text>
+  </g>
+  <g stroke="#374151" stroke-width="1.5" fill="none" marker-end="url(#a)">
+    <line x1="170" y1="105" x2="200" y2="105"/>
+    <line x1="350" y1="105" x2="380" y2="105"/>
+    <line x1="530" y1="105" x2="560" y2="105"/>
+    <line x1="150" y1="215" x2="190" y2="215"/>
+    <line x1="340" y1="215" x2="370" y2="215"/>
+    <line x1="520" y1="215" x2="550" y2="215"/>
+  </g>
+  <path d="M 645 130 L 645 160 L 265 160 L 265 190" stroke="#9ca3af" stroke-width="1.5" fill="none" stroke-dasharray="4 3" marker-end="url(#a)"/>
+  <text x="455" y="155" text-anchor="middle" font-size="11" fill="#6b7280">searches the index</text>
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L6,3 z" fill="#374151"/>
+    </marker>
+  </defs>
+</svg>
