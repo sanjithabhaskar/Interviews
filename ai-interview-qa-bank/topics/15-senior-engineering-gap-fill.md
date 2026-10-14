@@ -119,7 +119,7 @@ Deployment frequency, lead time for changes, change failure rate, and time to re
 ## Security fundamentals
 
 ### 15.031 What are the most common web vulnerabilities an interviewer expects you to name?
-Injection (SQL, command), broken access control, cross-site scripting, cross-site request forgery, insecure deserialization, and secrets in source. The OWASP Top 10 is the standard list to know.
+Injection (SQL, command), broken access control, cross-site scripting, and vulnerable or outdated components. Also know cross-site request forgery and insecure deserialization, which were on earlier OWASP lists; the 2021 Top 10 folds deserialization into software and data integrity failures. Secrets in source are a common finding, though they aren't a separate OWASP category.
 
 ### 15.032 How do you prevent SQL injection?
 Use parameterized queries or an ORM that binds parameters. Never build SQL by concatenating user input. Least-privilege database accounts limit the damage if it happens anyway.

@@ -9,12 +9,12 @@
     <text x="320" y="382">Masked multi-head self-attention</text>
     <text x="320" y="399" font-size="11" fill="#78350f">Q, K, V projections, causal mask</text>
     <rect x="200" y="290" width="240" height="40" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
-    <text x="320" y="315">Add and LayerNorm (residual)</text>
+    <text x="320" y="315">LayerNorm, then residual add</text>
     <rect x="200" y="220" width="240" height="50" rx="6" fill="#dcfce7" stroke="#15803d"/>
     <text x="320" y="242">Feed-forward network (MLP)</text>
     <text x="320" y="259" font-size="11" fill="#14532d">Usually the bulk of parameters</text>
     <rect x="200" y="150" width="240" height="40" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
-    <text x="320" y="175">Add and LayerNorm (residual)</text>
+    <text x="320" y="175">LayerNorm, then residual add</text>
     <rect x="200" y="60" width="240" height="50" rx="6" fill="#e0e7ff" stroke="#4f46e5"/>
     <text x="320" y="82">Output projection to vocabulary</text>
     <text x="320" y="99" font-size="11" fill="#312e81">Softmax gives next-token probabilities</text>
