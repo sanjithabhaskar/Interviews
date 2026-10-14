@@ -2,6 +2,9 @@
 
 A combined question bank for AI engineer and senior software engineer interviews. It merges three public sources, removes near-duplicate questions, tags each question with the companies that have been reported asking it, and fills the gaps with senior-engineering questions.
 
+## hosted at
+https://ai-interview-qa-bank-j8xk8bpqa-bhaskars-projects-1110372c.vercel.app
+
 ## Sources
 
 | Source | What it contributed |
