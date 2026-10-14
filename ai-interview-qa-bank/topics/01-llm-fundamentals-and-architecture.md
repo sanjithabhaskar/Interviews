@@ -6,6 +6,8 @@
 
 ![Decoder-only transformer block](../images/transformer-block.svg)
 
+![Predictive vs generative AI](../images/predictive-vs-generative.svg)
+
 
 01.001  What is a token, and why does tokenization matter in practice?
 > Source: LLM Q&A (aishwaryanr)

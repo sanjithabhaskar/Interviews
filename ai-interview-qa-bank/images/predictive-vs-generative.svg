@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" font-family="Helvetica, Arial, sans-serif">
+  <title>Predictive AI vs generative AI: one forward pass vs a loop of next-token steps</title>
+  <rect width="760" height="400" fill="#ffffff"/>
+  <text x="380" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#1f2937">Predictive AI vs generative AI</text>
+
+  <text x="20" y="66" font-size="13" font-weight="bold" fill="#15803d">PREDICTIVE: one forward pass, fixed-size output</text>
+  <g font-size="13" text-anchor="middle" fill="#1f2937">
+    <rect x="20" y="80" width="200" height="56" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+    <text x="120" y="103">Input features</text>
+    <text x="120" y="121" font-size="11" fill="#374151">fixed-length numeric vector</text>
+    <rect x="280" y="80" width="200" height="56" rx="6" fill="#dcfce7" stroke="#15803d"/>
+    <text x="380" y="103">Model</text>
+    <text x="380" y="121" font-size="11" fill="#14532d">e.g. classifier or regressor</text>
+    <rect x="540" y="80" width="200" height="56" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+    <text x="640" y="103">Prediction</text>
+    <text x="640" y="121" font-size="11" fill="#374151">class label or score</text>
+  </g>
+  <g stroke="#374151" stroke-width="1.5" fill="none" marker-end="url(#a)">
+    <line x1="220" y1="108" x2="280" y2="108"/>
+    <line x1="480" y1="108" x2="540" y2="108"/>
+  </g>
+
+  <text x="20" y="190" font-size="13" font-weight="bold" fill="#4f46e5">GENERATIVE (LLM): repeated next-token steps, variable-length output</text>
+  <g font-size="13" text-anchor="middle" fill="#1f2937">
+    <rect x="20" y="210" width="160" height="56" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+    <text x="100" y="233">Prompt tokens</text>
+    <text x="100" y="251" font-size="11" fill="#374151">context so far</text>
+    <rect x="230" y="210" width="200" height="56" rx="6" fill="#e0e7ff" stroke="#4f46e5"/>
+    <text x="330" y="233">Transformer decoder</text>
+    <text x="330" y="251" font-size="11" fill="#312e81">attention over all context</text>
+    <rect x="480" y="210" width="160" height="56" rx="6" fill="#fef3c7" stroke="#b45309"/>
+    <text x="560" y="233">Next-token probabilities</text>
+    <text x="560" y="251" font-size="11" fill="#78350f">pick one token</text>
+  </g>
+  <g stroke="#374151" stroke-width="1.5" fill="none" marker-end="url(#a)">
+    <line x1="180" y1="238" x2="230" y2="238"/>
+    <line x1="430" y1="238" x2="480" y2="238"/>
+  </g>
+  <path d="M 560 266 L 560 306 L 100 306 L 100 266" stroke="#9ca3af" stroke-width="1.5" fill="none" stroke-dasharray="4 3" marker-end="url(#a)"/>
+  <text x="330" y="300" text-anchor="middle" font-size="11" fill="#6b7280">append the chosen token to the context and repeat until a stop token or length limit</text>
+  <text x="380" y="352" text-anchor="middle" font-size="12" fill="#374151">Predictive models return a fixed output in one pass. Generative models run one pass per output token.</text>
+  <text x="380" y="374" text-anchor="middle" font-size="12" fill="#374151">The same transformer can power both, but a classifier head produces labels while a language-model head produces text.</text>
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L6,3 z" fill="#374151"/>
+    </marker>
+  </defs>
+</svg>

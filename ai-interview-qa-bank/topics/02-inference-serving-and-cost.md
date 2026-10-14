@@ -8,6 +8,8 @@
 
 ![LLM serving stack](../images/llm-serving-architecture.svg)
 
+![Prefill vs decode and GPU load](../images/prefill-vs-decode-gpu-load.svg)
+
 
 02.001  How would you keep an LLM feature's cost and latency under control?
 > Source: LLM Q&A (aishwaryanr)

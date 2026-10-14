@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" font-family="Helvetica, Arial, sans-serif">
+  <title>LLM inference: prefill over the prompt, then decode one token at a time</title>
+  <rect width="760" height="380" fill="#ffffff"/>
+  <text x="380" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#1f2937">Prefill vs decode: where GPU load comes from</text>
+
+  <rect x="20" y="50" width="350" height="230" rx="8" fill="#e0e7ff" stroke="#4f46e5"/>
+  <text x="195" y="78" text-anchor="middle" font-size="14" font-weight="bold" fill="#312e81">1. Prefill</text>
+  <text x="195" y="100" text-anchor="middle" font-size="12" fill="#312e81">all prompt tokens processed in parallel</text>
+  <rect x="50" y="120" width="290" height="40" rx="6" fill="#ffffff" stroke="#4f46e5"/>
+  <text x="195" y="145" text-anchor="middle" font-size="12" fill="#1f2937">Prompt (system + RAG chunks + user)</text>
+  <text x="195" y="185" text-anchor="middle" font-size="12" fill="#1f2937">Builds the KV cache for every prompt token</text>
+  <text x="195" y="207" text-anchor="middle" font-size="12" font-weight="bold" fill="#312e81">Mostly compute-bound</text>
+  <text x="195" y="229" text-anchor="middle" font-size="11" fill="#374151">cost grows with prompt length</text>
+  <text x="195" y="256" text-anchor="middle" font-size="11" fill="#374151">time to first token is dominated by this phase</text>
+
+  <rect x="390" y="50" width="350" height="230" rx="8" fill="#fef3c7" stroke="#b45309"/>
+  <text x="565" y="78" text-anchor="middle" font-size="14" font-weight="bold" fill="#78350f">2. Decode</text>
+  <text x="565" y="100" text-anchor="middle" font-size="12" fill="#78350f">one new token per step</text>
+  <rect x="420" y="120" width="290" height="40" rx="6" fill="#ffffff" stroke="#b45309"/>
+  <text x="565" y="145" text-anchor="middle" font-size="12" fill="#1f2937">Each step reads the weights and KV cache</text>
+  <text x="565" y="185" text-anchor="middle" font-size="12" fill="#1f2937">Appends one K and V per layer, then repeats</text>
+  <text x="565" y="207" text-anchor="middle" font-size="12" font-weight="bold" fill="#78350f">Often memory-bandwidth-bound</text>
+  <text x="565" y="229" text-anchor="middle" font-size="11" fill="#374151">time per output token grows with context length</text>
+  <text x="565" y="256" text-anchor="middle" font-size="11" fill="#374151">cost grows with output length and batch size</text>
+
+  <text x="380" y="310" text-anchor="middle" font-size="13" font-weight="bold" fill="#1f2937">What inflates GPU memory and compute</text>
+  <text x="380" y="332" text-anchor="middle" font-size="12" fill="#374151">Longer context (RAG chunks, long chat history) adds prefill work and a larger KV cache.</text>
+  <text x="380" y="352" text-anchor="middle" font-size="12" fill="#374151">Larger batches add KV memory per request. Bigger models add weight reads per step.</text>
+  <text x="380" y="372" text-anchor="middle" font-size="12" fill="#374151">Quantizing weights or the KV cache reduces memory use.</text>
+</svg>
